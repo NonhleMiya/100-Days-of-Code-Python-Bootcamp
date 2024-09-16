@@ -1,0 +1,49 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+choice1 = int(input("Choose 1 for rock, 2 for paper, 3 for scissors"))
+choice2 = random.randint(1,2)
+game_images = [rock, paper, scissors]
+
+
+user_choice=game_images[choice1]
+print(f"You chose: {user_choice}")
+computer_choice=game_images[choice2]
+print(f"Computer chose: {computer_choice}")
+
+if choice1 >= 3 or choice1 < 0:
+    print("You typed an invalid number. You lose!")
+elif choice1 == 0 and choice2 == 2:
+    print("You win!")
+elif choice2 == 0 and choice1 == 2:
+    print("You lose!")
+elif choice2 > choice1:
+    print("You lose!")
+elif choice1 > choice2:
+    print("You win!")
+elif choice2 == choice1:
+    print("It's a draw!")
